@@ -42,8 +42,24 @@ class ViewController: UIViewController {
         //Speak the message
         synthesizer.speak(utterance)
         
+        print("for testing purposes, the random number was \(targetNumber)")
+        
     }
-
-
+    //Will be used to check a guess
+    @IBAction func checkGuess(_ sender: Any) {
+        
+        // Obtain the guess value from text field
+        let guessText = submittedGuess.text!
+        let guessNumber = Int(guessText)!
+        
+        //For testing purposes, what was the guess?
+        print("for testing purposes, the guess was \(guessNumber)")
+        
+        
+        
+        
+    }
+    
+    
 }
 

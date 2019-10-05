@@ -29,6 +29,9 @@
                                 <rect key="frame" x="159" y="482" width="96" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit Guess"/>
+                                <connections>
+                                    <action selector="checkGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dK0-b9-2pF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="60"/>
+            <point key="canvasLocation" x="471" y="12"/>
         </scene>
     </scenes>
 </document>

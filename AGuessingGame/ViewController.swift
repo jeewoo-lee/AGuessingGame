@@ -55,6 +55,15 @@ class ViewController: UIViewController {
         //For testing purposes, what was the guess?
         print("for testing purposes, the guess was \(guessNumber)")
         
+        // Give the appropriate feedback to user
+        if guessNumber > targetNumber {
+            print("guess lower")
+        } else if guessNumber < targetNumber {
+            print("guess higher")
+        } else {
+            print("You are correct")
+        }
+        
         
         
         

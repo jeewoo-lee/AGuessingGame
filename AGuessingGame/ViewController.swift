@@ -26,25 +26,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //Make an object named 'synthesizer' which is an instance of the
-        //class AVSpeechSynthesizer
-        let synthesizer = AVSpeechSynthesizer()
-        
-        
-        //make a string that contains what we want to say
-        let message = "I'm thinking of number between 1 and 100. Guess what it is"
-        
-        
-        //Make an object named 'utterance', which is an instance of the class
-        //AVSpeechSynthesizer
-        let utterance = AVSpeechUtterance(string: message)
-        
-        //Speak the message
-        synthesizer.speak(utterance)
+        speak(message: "I'm Thinking of number between 1 and 100. Guess what it is.")
         
         print("for testing purposes, the random number was \(targetNumber)")
         
     }
+    
     //Will be used to check a guess
     @IBAction func checkGuess(_ sender: Any) {
         
@@ -58,20 +45,14 @@ class ViewController: UIViewController {
         // Give the appropriate feedback to user
         if guessNumber > targetNumber {
 
-            //Try
-            let guessLower = "guess lower"
-            let secondUtterance = AVSpeechUtterance(string: guessLower)
-            AVSpeechSynthesizer().speak(secondUtterance)
+            speak(message: "guess lower")
+            
         } else if guessNumber < targetNumber {
-            //Try
-            let guessHigher = "guess higher"
-            let thirdUtterance = AVSpeechUtterance(string: guessHigher)
-            AVSpeechSynthesizer().speak(thirdUtterance)
+            
+            speak(message: "guess higher")
         } else {
-            //Try
-            let correct = "You are correct"
-            let fourthUtterance = AVSpeechUtterance(string: correct)
-            AVSpeechSynthesizer().speak(fourthUtterance)
+            
+            speak(message: "You are correct!")
         }
         
         
@@ -79,6 +60,22 @@ class ViewController: UIViewController {
         
     }
     
-    
+    //A function that will speak whatever message is provided
+    func speak(message: String) {
+        //Make an object named 'synthesizer' which is an instance of the
+        //class AVSpeechSynthesizer
+        let synthesizer = AVSpeechSynthesizer()
+        
+        
+        
+        //Make an object named 'utterance', which is an instance of the class
+        //AVSpeechSynthesizer
+        let utterance = AVSpeechUtterance(string: message)
+        
+        //Speak the message
+        synthesizer.speak(utterance)
+        
+        print(message)
+    }
 }
 
